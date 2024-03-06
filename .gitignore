@@ -1,0 +1,9 @@
+.cache/
+__pycache__/
+outputs/
+env/
+wandb/
+ckpts/
+trash/
+tmp*/
+logs/
