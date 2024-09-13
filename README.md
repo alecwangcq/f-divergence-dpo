@@ -1,6 +1,8 @@
 # $f$-DPO
 This repository contains the implementation of $f$ - DPO (Direct Preference Optimization) with various divergence regularizations, such as forward KL, reverse KL, Jensen-Shannon divergence, and $\alpha$-divergences ( $\alpha \in (0,1)$ ). The code is designed for producing the results presented in our ICLR 2024 paper, "[Beyond Reverse KL: Generalizing Direct Preference Optimization with Diverse Divergence Constraints](https://arxiv.org/pdf/2309.16240.pdf)".
 
+**Update (09/13/2024)**: The [TRL](https://github.com/huggingface/trl) library now also supports DPO with $f$-divergences. Check out the documentation for more details [doc](https://huggingface.co/docs/trl/main/en/dpo_trainer#trl.DPOConfig.f_divergence_type).
+
 # Requirements
 To get started, please install the required libraries first:
 ```
