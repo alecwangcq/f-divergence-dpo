@@ -45,9 +45,9 @@ def stabilized_log1pexp(x):
     """
     Compute log(1 + exp(x)) in a numerically stable way."""
     mask = x > 0
-    safe_x = torch.where(mask, x, torch.zeros_like(x))
-    risky_x = torch.where(mask, torch.zeros_like(x), x)
-    return torch.where(mask, safe_x + torch.log1p(torch.exp(-safe_x)), torch.log1p(torch.exp(risky_x)))
+    risky_x = torch.where(mask, x, torch.zeros_like(x))
+    safe_x = torch.where(mask, torch.zeros_like(x), x)
+    return torch.where(mask, risky_x + torch.log1p(torch.exp(-risky_x)), torch.log1p(torch.exp(safe_x)))
 
 
 def dpo_loss(policy_chosen_logps: torch.FloatTensor,
